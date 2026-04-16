@@ -192,6 +192,18 @@ function toggleRadDeg() {
     calculator.toggleRadDeg();
 }
 
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+        });
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    }
+}
+
 // Keyboard support
 document.addEventListener('keydown', e => {
     if (e.key >= 0 && e.key <= 9) appendNumber(e.key);
