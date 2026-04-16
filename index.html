@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="styles.css?v=v1a2b3">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="calculator">
+            <div class="display-container">
+                <div class="previous-operand" id="previous-operand"></div>
+                <div class="current-operand" id="current-operand">0</div>
+            </div>
+            <div class="buttons">
+                <!-- Scientific Row 1 -->
+                <button class="btn scientific" onclick="appendFunction('sin')">sin</button>
+                <button class="btn scientific" onclick="appendFunction('cos')">cos</button>
+                <button class="btn scientific" onclick="appendFunction('tan')">tan</button>
+                <button class="btn scientific" onclick="appendFunction('log')">log</button>
+                <button class="btn scientific" onclick="appendFunction('ln')">ln</button>
+
+                <!-- Scientific Row 2 -->
+                <button class="btn scientific" onclick="appendOperator('^')">x<sup>y</sup></button>
+                <button class="btn scientific" onclick="appendFunction('sqrt')">√</button>
+                <button class="btn scientific" onclick="appendConstant('pi')">π</button>
+                <button class="btn scientific" onclick="appendConstant('e')">e</button>
+                <button class="btn scientific" onclick="toggleRadDeg()" id="rad-deg-btn">Deg</button>
+
+                <!-- Basic Controls -->
+                <button class="btn control" onclick="clearDisplay()">AC</button>
+                <button class="btn control" onclick="deleteLast()">DEL</button>
+                <button class="btn operator" onclick="appendOperator('/')">÷</button>
+                <button class="btn operator" onclick="appendOperator('*')">×</button>
+
+                <!-- Numbers and Operators Row 1 -->
+                <button class="btn number" onclick="appendNumber('7')">7</button>
+                <button class="btn number" onclick="appendNumber('8')">8</button>
+                <button class="btn number" onclick="appendNumber('9')">9</button>
+                <button class="btn operator" onclick="appendOperator('-')">-</button>
+
+                <!-- Numbers and Operators Row 2 -->
+                <button class="btn number" onclick="appendNumber('4')">4</button>
+                <button class="btn number" onclick="appendNumber('5')">5</button>
+                <button class="btn number" onclick="appendNumber('6')">6</button>
+                <button class="btn operator" onclick="appendOperator('+')">+</button>
+
+                <!-- Numbers and Operators Row 3 -->
+                <button class="btn number" onclick="appendNumber('1')">1</button>
+                <button class="btn number" onclick="appendNumber('2')">2</button>
+                <button class="btn number" onclick="appendNumber('3')">3</button>
+                <button class="btn equal span-two-v" onclick="compute()">=</button>
+
+                <!-- Bottom Row -->
+                <button class="btn number span-two" onclick="appendNumber('0')">0</button>
+                <button class="btn number" onclick="appendNumber('.')">.</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js?v=v1a2b3"></script>
+</body>
+</html>
